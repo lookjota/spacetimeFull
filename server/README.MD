@@ -589,3 +589,74 @@ tipado que pode ser usado para ler e escrever dados programaticamente em um banc
 #### Criando o front-end da nossa aplicacao
 
 - Usando React com frameWork next
+
+### comando para fazer atualizacao no banco de dados
+
+$ npx prisma migrate reset
+$ npx prisma migrate dev
+
+- ver banco de dados
+$ npx prisma studio
+
+### install dependencies zod
+
+$ npm i zod 
+
+- dependencia de validacao 
+
+### dependencies install fastify/criados
+$ npm i @fastify/cors
+
+- instruir quais URL de front-end o nosso beck-end vai poder ser acessado
+
+
+### install dependencies dotenv
+
+$ npm i dotenv -D
+
+- para que ele leia as variaveis ambiente e converta em variaveis
+no process.env 
+
+### Install dependencies axios
+
+$ npm i axios 
+
+- melhor forma de fazer requisicoes http eh usando axios
+- eh uma api simples e leve
+
+### JWT
+
+- dentro do contexto de autenticacao
+- trabalhando com JWT
+- json web token
+
+- eh basicamente um token criado pelo nosso back-end e enviado para front-end
+pro front-end usar esse token nas requisicoes que ele faz pro back-end para
+podermos identificar um usuario logado
+- ou seja, quando fizermos esse processe de cadastro de usuario, 
+nao so o usuario, agente vai criar tbm pro front-end acessar
+um JWL que eh um token 
+- que o front-end vai poder utilizar por quanto tempo que vamos descidir
+que o usuario vai poder ficar logado,
+- o Front-end vai guardar essa informacao la, nos cookies ou na memoria
+- toda vez que o front-end fizer uma requisicao pro back-end
+ele vai enviar esse token junto, e o beck-end vai saber que esse token,
+pertence a tal usuario, podendo identificar esse usuario nas proximas
+requisicoes
+
+- por enquanto so conseguimos identificar o usuario na rota register
+- esta estatico
+
+- para fazer da forma correta iremos usar a estrategia JWL
+
+### Install dependencies JWL
+
+$ npm i @fastify/jwt
+
+
+### requisicoes
+httpie
+$ http POST localhost:3333/register code=5613622d6c6514ada6e6 --json
+
+- usando token valido
+$ http -A bearer -a eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSm9hbyBDYXJsb3MgTGlzYm9hIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9hdmF0YXJzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91Lzc3NzUwOTYwP3Y9NCIsInN1YiI6ImNtNzlkajM4ODAwMDB1bzZ3am83ZWtyeHkiLCJpYXQiOjE3Mzk4ODI0MzcsImV4cCI6MTc0MDMxNDQzN30.5gB2moe-WXnofvRgwyZz0HVO_GFqdoWgMpOdh8yWFjY localhost:3333/memories

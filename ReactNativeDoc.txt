@@ -1,0 +1,22 @@
+$ npx create-expo-app mobile
+
+- starter
+
+- npm run dev
+
+### install dependencies
+- native wind
+
+https://www.nativewind.dev/getting-started/expo-router **
+
+
+$ 
+
+npm run web
+
+npm run start
+
+global.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
